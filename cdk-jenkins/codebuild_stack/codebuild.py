@@ -68,7 +68,7 @@ class CodeBuildStack(Stack):
                 "codebuild_stack/codebuild_webgoat_buildspec.yaml"
             ),
             source=codebuild.Source.git_hub(owner=source_owner, repo="WebGoat"),
-            artifacts=codebuild.Artifacts.s3(bucket=s3_bucket,package_zip=True,encryption=False),
+            # artifacts=codebuild.Artifacts.s3(bucket=s3_bucket,package_zip=True,encryption=False),
             artifacts=codebuild.Artifacts.s3(bucket=s3_bucket, encryption=False),
             environment=codebuild.BuildEnvironment(
                 privileged=True,
